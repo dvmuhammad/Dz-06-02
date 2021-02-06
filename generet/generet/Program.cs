@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace zadaniya1
 {
@@ -19,46 +19,42 @@ namespace zadaniya1
 	{
 		public static T Pop(ref T[] arr)
 		{
-			T[] newArr = new T[arr.Length - 1];
+			T[] arraye = new T[arr.Length - 1];
 			for (int i = 0; i < arr.Length - 1; i++)
-			{
-				newArr[i] = arr[i];
-			}
-			T returnVal = arr[arr.Length - 1];
-			arr = newArr;
-			return returnVal;
+				arraye[i] = arr[i];
+			
+			T val = arr[arr.Length - 1];
+			arr = arraye;
+			return val;
 		}
 		public static int Push(ref T[] arr, T itemToPush)
 		{
-			T[] newArr = new T[arr.Length + 1];
+			T[] arraye = new T[arr.Length + 1];
 			for (int i = 0; i < arr.Length; i++)
-			{
-				newArr[i] = arr[i];
-			}
-			newArr[arr.Length] = itemToPush;
-			arr = newArr;
+				arraye[i] = arr[i];
+			
+			arraye[arr.Length] = itemToPush;
+			arr = arraye;
 			return arr.Length;
 		}
 		public static T Shift(ref T[] arr)
 		{
-			T[] newArr = new T[arr.Length - 1];
+			T[] arraye = new T[arr.Length - 1];
 			for (int i = 0; i < arr.Length; i++)
-			{
-				newArr[i] = arr[i + 1];
-			}
+				arraye[i] = arr[i + 1];
+			
 			T returnVal = arr[0];
-			arr = newArr;
+			arr = arraye;
 			return returnVal;
 		}
 		public static int Unshift(ref T[] arr, T itemToUnshift)
 		{
-			T[] newArr = new T[arr.Length + 1];
+			T[] arraye = new T[arr.Length + 1];
 			for (int i = 0; i < arr.Length; i++)
-			{
-				newArr[i + 1] = arr[i];
-			}
-			newArr[0] = itemToUnshift;
-			arr = newArr;
+				arraye[i + 1] = arr[i];
+			
+			arraye[0] = itemToUnshift;
+			arr = arraye;
 			return arr.Length;
 		}
 		public static void Show(T[] arr)
@@ -83,13 +79,13 @@ namespace zadaniya1
 			{
 				end = arr.Length + end;
 			}
-			int newLength = Math.Abs(end - begin);
-			T[] newArr = new T[newLength];
-			for (int i = 0; i < newLength; i++)
+			int Lengn = Math.Abs(end - begin);
+			T[] arraye = new T[Lengn];
+			for (int i = 0; i < Lengn; i++)
 			{
-				newArr[i] = arr[begin + i];
+				arraye[i] = arr[begin + i];
 			}
-			return newArr;
+			return arraye;
 		}
 	}
 }
