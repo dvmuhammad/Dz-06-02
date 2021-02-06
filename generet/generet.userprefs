@@ -1,0 +1,13 @@
+﻿<Properties StartupConfiguration="{3B8DA1B1-22A9-4084-B89D-8E86F3802FDA}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.generet PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="generet\Program.cs">
+    <Files>
+      <File FileName="generet\Program.cs" Line="18" Column="26" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
