@@ -6,10 +6,10 @@ namespace zadaniya1
 	{
 		static void Main(string[] args)
 		{
-			string[] arr = new string[] { "ant", "bison", "camel", "duck", "elephant" };
-			ArrayHelper<string>.Show(ArrayHelper<string>.Slice(arr, 2));
-			ArrayHelper<string>.Show(ArrayHelper<string>.Slice(arr, 2, 4));
-			ArrayHelper<string>.Show(ArrayHelper<string>.Slice(arr, 1, 5));
+			string[] animals = new string[] { "ant", "bison", "camel", "duck", "elephant" };
+			ArrayHelper<string>.pray(ArrayHelper<string>.Slice(animals, 2));
+			ArrayHelper<string>.pray(ArrayHelper<string>.Slice(animals, 2, 4));
+			ArrayHelper<string>.pray(ArrayHelper<string>.Slice(animals, 1, 5));
 
 			Console.ReadKey();
 		}
@@ -17,74 +17,69 @@ namespace zadaniya1
 
 	static class ArrayHelper<T>
 	{
-		public static T Pop(ref T[] arr)
+		public static T Pop(ref T[] animals)
 		{
-			T[] arraye = new T[arr.Length - 1];
-			for (int i = 0; i < arr.Length - 1; i++)
-				arraye[i] = arr[i];
+			T[] arraye = new T[animals.Length - 1];
+			for (int i = 0; i < animals.Length - 1; i++)
+				arraye[i] = animals[i];
 			
-			T val = arr[arr.Length - 1];
-			arr = arraye;
+			T val = animals[animals.Length - 1];
+			animals = arraye;
 			return val;
 		}
-		public static int Push(ref T[] arr, T itemToPush)
+		public static int Push(ref T[] animals, T push)
 		{
-			T[] arraye = new T[arr.Length + 1];
-			for (int i = 0; i < arr.Length; i++)
-				arraye[i] = arr[i];
+			T[] arraye = new T[animals.Length + 1];
+			for (int i = 0; i < animals.Length; i++)
+				arraye[i] = animals[i];
 			
-			arraye[arr.Length] = itemToPush;
-			arr = arraye;
-			return arr.Length;
+			arraye[animals.Length] = push;
+			animals = arraye;
+			return animals.Length;
 		}
-		public static T Shift(ref T[] arr)
+		public static T Shift(ref T[] animals)
 		{
-			T[] arraye = new T[arr.Length - 1];
-			for (int i = 0; i < arr.Length; i++)
-				arraye[i] = arr[i + 1];
+			T[] arraye = new T[animals.Length - 1];
+			for (int i = 0; i < animals.Length; i++)
+				arraye[i] = animals[i + 1];
 			
-			T returnVal = arr[0];
-			arr = arraye;
-			return returnVal;
+			T val = animals[0];
+			animals = arraye;
+			return val;
 		}
-		public static int Unshift(ref T[] arr, T itemToUnshift)
+		public static int Unshift(ref T[] animals, T unsift)
 		{
-			T[] arraye = new T[arr.Length + 1];
-			for (int i = 0; i < arr.Length; i++)
-				arraye[i + 1] = arr[i];
+			T[] arraye = new T[animals.Length + 1];
+			for (int i = 0; i < animals.Length; i++)
+				arraye[i + 1] = animals[i];
 			
-			arraye[0] = itemToUnshift;
-			arr = arraye;
-			return arr.Length;
+			arraye[0] = unsift;
+			animals = arraye;
+			return animals.Length;
 		}
-		public static void Show(T[] arr)
+		public static void pray(T[] animals)
 		{
-			foreach (var item in arr)
-			{
-				Console.Write($"{item} ");
-			}
+			foreach (var trin in animals)
+				Console.Write($"{trin} ");
+			
 			Console.WriteLine();
 		}
-		public static T[] Slice(T[] arr, int begin = 0, int end = 0)
+		public static T[] Slice(T[] animals, int begin = 0, int end = 0)
 		{
-			if (arr == null)
-			{
+			if (animals == null)
 				throw new ArgumentNullException("ошибка");
-			}
+			
 			if (begin < 0)
-			{
-				begin = arr.Length + begin;
-			}
+				begin = animals.Length + begin;
+			
 			if (end <= 0)
-			{
-				end = arr.Length + end;
-			}
+				end = animals.Length + end;
+			
 			int Lengn = Math.Abs(end - begin);
 			T[] arraye = new T[Lengn];
 			for (int i = 0; i < Lengn; i++)
-			{
-				arraye[i] = arr[begin + i];
-			}
+				arraye[i] = animals[begin + i];
+			
 			return arraye;
 		}
 	}
